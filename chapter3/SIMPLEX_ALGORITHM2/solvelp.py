@@ -12,8 +12,7 @@ class Symplex:
         c: vector length n
     Output:
         A vertex x of P := {x | Ax <= b, x >= 0} attaining max{cx | x in P}
-        of
-        vector w with Aw <= 0 and cw > 0
+        of vector w with Aw <= 0 and cw > 0
 
     Examples
     --------
