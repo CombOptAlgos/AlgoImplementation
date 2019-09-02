@@ -14,6 +14,23 @@ class Symplex:
         A vertex x of P := {x | Ax <= b, x >= 0} attaining max{cx | x in P}
         of
         vector w with Aw <= 0 and cw > 0
+
+    Examples
+    --------
+    >>> import numpy as np
+    >>> from solvelp import Symplex
+    >>> A = np.array([[1, -1],[1, 1],[-1, 1],[-1, -1]])
+    >>> b = np.array([1, 1, 1, 1])
+    >>> c = np.array([[2, -1]])
+    >>> solver = Symplex().fit(A, b, c)
+    >>> print(solver.result())
+    2.0
+    >>> print(solver.tableau)
+    [[ 1.   0.   0.5  0.5  0.   0.   1. ]
+    [ 0.   2.  -1.   1.   0.   0.   0. ]
+    [ 0.   0.   1.   0.   1.   0.   2. ]
+    [ 0.   0.   0.   1.   0.   1.   2. ]
+    [ 0.   0.   1.5  0.5  0.   0.   2. ]]
     """
 
     def __init__(self):
