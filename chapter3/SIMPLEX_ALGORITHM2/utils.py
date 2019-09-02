@@ -1,5 +1,6 @@
 import numpy as np
 
+eps = 1e-5
 
 def make_tableu(A, b):
     """make initial tableu table
@@ -13,7 +14,7 @@ def make_tableu(A, b):
 
     """
     A = A.astype(np.float32)
-    
+
     m, _ = A.shape
     is_nonnegative = b.flatten()>=0
     is_negative = b.flatten() < 0
@@ -44,14 +45,14 @@ def get_indices(tableu):
     i, j = (None, None)
 
     for i_ in range(n_cols-1):
-        if tableu[-1][i_] < 0:
+        if tableu[-1][i_] < -eps:
             i = i_
             break
     if i is None:
         return i, j # ともにNone
 
     for j_ in range(n_rows-1):
-        if tableu[j_][i] > 0:
+        if tableu[j_][i] > eps:
             if j is None:
                 j = j_
             else:
@@ -87,11 +88,8 @@ def sweep_out(tableu, i, j):
 
     return tableu
 
-if __name__=="__main__":
+def symplex():
     A = -np.random.randint(6, 100, (3,3))
-    # A = np.arange(9)
-    # A = A.reshape(3,3)
-    # b = np.random.randint(6, 100, (3,1))
     b = np.array([-2,-2,3])
     c = np.random.randint(6, 100, (3,1))
     tableu = make_tableu(A, b)
@@ -102,3 +100,8 @@ if __name__=="__main__":
         i, j = get_indices(tableu)
         print(tableu)
     print(tableu)
+    
+    
+
+if __name__=="__main__":
+    symplex()
