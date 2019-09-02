@@ -56,7 +56,7 @@ def make_tableau(A, b):
 
 
 def get_indices(tableau):
-    """get i, j from tableau
+    """get i, j such indices that are used as pivot to sweep out the tableau table with
 
     Parameters
     ----------s
@@ -66,10 +66,10 @@ def get_indices(tableau):
 
     Returns
     -------
-    i : int
+    i : int minimum column index s.t. yi<0
 
-    j : int
-
+    j : int argmin lambda
+    
     Examples
     --------
     >>> import numpy as np
