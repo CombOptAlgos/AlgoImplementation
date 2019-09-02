@@ -28,6 +28,7 @@ def make_tableau(A, b):
            [6., 7., 8., 0., 0., 1., 0.],
            [0., 0., 0., 0., 0., 0., 0.]])
     """
+    
     A = A.astype(np.float32)
 
     m, _ = A.shape
@@ -145,6 +146,7 @@ def sweep_out(tableau, i, j):
         + n_variables + n_nonnegative_elements_of_b]
         tableau table after swept out
     """
+    
     n_rows, n_cols = tableau.shape
     for j_ in range(n_rows):
         if j_ != j:
@@ -177,6 +179,7 @@ def renew(A, b, c, tableau):
     tableau : sparse matrix shape = [n_inequalities, n_inequalities
          + n_variables + n_nonnegative_elements_of_b]
     """
+    
     A = A.astype(np.float32)
 
     m, n = A.shape
