@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from utils import make_tableau, get_indices, sweep_out, reuse
+from utils import make_tableau, get_indices, sweep_out, renew
 
 
 class Symplex:
@@ -20,13 +20,31 @@ class Symplex:
         self.tableau = None
 
     def fit(self, A, b, c):
+        """set matrix and vectors and solve LP by updatind tableau table
+
+        Parameters
+        ----------
+        A : sparse matrix shape = [n_inequalities, n_variables]
+            Coefficient matrix of inequality system
+
+        b : array-like, shape = [n_inequalities]
+            Intercept vector of inequality system
+
+        c : array-like, shape = [n_valiables]
+            Coefficient vector of objective function
+
+        Returns
+        -------
+        self : object
+
+        """
         self.tableau = make_tableau(A, b)
         i, j = get_indices(self.tableau)
         while i is not None and j is not None:
             self.tableau = sweep_out(self.tableau, i, j)
             i, j = get_indices(self.tableau)
 
-        self.tableau = reuse(A, b, c, self.tableau)
+        self.tableau = renew(A, b, c, self.tableau)
 
         assert self.tableau[-1][-1] == sum([-i for i in b if i < 0]), \
             "LP has no solution (infeasible)"
