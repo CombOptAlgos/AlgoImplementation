@@ -11,7 +11,7 @@ def make_tableu(A, b):
     Return
     ------
 
-    """     
+    """
     A = A.astype(np.float32)
     
     m, _ = A.shape
