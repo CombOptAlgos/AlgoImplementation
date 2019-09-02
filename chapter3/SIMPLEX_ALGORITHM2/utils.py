@@ -8,9 +8,11 @@ def make_tableau(A, b):
 
     Parameters
     ----------
-    A : ndarray
+    A : sparse matrix shape = [n_inequalities, n_variables]
+        Coefficient matrix of inequality system
 
-    b : 
+    b : array-like, shape = [n_inequalities]
+        Intercept vector of inequality system
 
     Return
     ------
@@ -56,12 +58,15 @@ def get_indices(tableau):
     """get i, j from tableau
 
     Parameters
-    ----------
-    tableu : ndarray
+    ----------s
+    tableau : sparse matrix shape = [n_inequalities, n_inequalities
+        + n_variables + n_nonnegative_elements_of_b]
+        tableau table to solve LP
 
     Returns
     -------
     i : int
+    
     j : int
 
     Examples
@@ -99,18 +104,21 @@ def get_indices(tableau):
 
 
 def culc_lambda(tableau, i, j):
-    """get i, j from tableau
+    """culculate lambda
 
     Parameters
     ----------
+    tableau : sparse matrix shape = [n_inequalities, n_inequalities
+         + n_variables + n_nonnegative_elements_of_b]
+         tableau table to solve LP
 
+    i : int
+    
+    j : int
+    
     Returns
     -------
-    lambda_
-
-    Examples
-    --------
-
+    lambda_ : np.float64
     """
 
     lambda_ = tableau[j][-1] / tableau[j][i]
@@ -118,15 +126,24 @@ def culc_lambda(tableau, i, j):
 
 
 def sweep_out(tableau, i, j):
-    """sweep out tableau table
+    """sweep out tableau table with index i, j as pivot
 
-    Arguments:
-        tableau {ndarray} -- tableau table
-        i {int} -- pivot index of column
-        j {int} -- pivot index of row
+    Parameters
+    ----------
+    tableau : sparse matrix shape = [n_inequalities, n_inequalities
+        + n_variables + n_nonnegative_elements_of_b]
+        tableau table before swept out
+    
+    i : int 
+        pivot index of column
+    j : int
+        pivot index of row
 
-    Returns:
-        tableau {ndarray} -- swept out tableau table
+    Returns
+    -------
+    tableau : sparse matrix shape = [n_inequalities, n_inequalities
+        + n_variables + n_nonnegative_elements_of_b]
+        tableau table after swept out
     """
     n_rows, n_cols = tableau.shape
     for j_ in range(n_rows):
@@ -137,28 +154,28 @@ def sweep_out(tableau, i, j):
     return tableau
 
 
-def reuse(A, b, c, tableau):
-    """
-    get i, j from tableau
+def renew(A, b, c, tableau):
+    """renew tableu table to use again
 
     Parameters
     ----------
-    tableu : ndarray
+    A : sparse matrix shape = [n_inequalities, n_variables]
+        Coefficient matrix of inequality system
+
+    b : array-like, shape = [n_inequalities]
+        Intercept vector of inequality system
+
+    c : array-like, shape = [n_valiables]
+        Coefficient vector of objective function
+        tableu : ndarray
+
+    tableau : sparse matrix shape = [n_inequalities, n_inequalities
+         + n_variables + n_nonnegative_elements_of_b]
 
     Returns
     -------
-    i : int
-    j : int
-
-    Examples
-    --------
-    >>> import numpy as np
-    >>> tableau1 = np.array([[1, 2, 3],[4, 5, 6],[-1, -7, 8]])
-    >>> get_indices(tableau1)
-    (0, 1)
-    >>> tableau2 = np.array([[1, 2, 3],[4, 5, 10],[1, -7, -8]])
-    >>> get_indices(tableau2)
-    (1, 0)
+    tableau : sparse matrix shape = [n_inequalities, n_inequalities
+         + n_variables + n_nonnegative_elements_of_b]
     """
     A = A.astype(np.float32)
 
