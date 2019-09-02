@@ -1,4 +1,4 @@
-# Symplex Algorithm Implementaton
+# Symplex Algorithm Implementation
 
 ## Directory Structure
 
@@ -16,7 +16,7 @@
 numpy==1.17.1
 ```
 
-Usage
+## Usage
 
 ```
 >>> import numpy as np
