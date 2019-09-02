@@ -42,7 +42,7 @@ class Symplex:
 
 
     def result(self):
-        print(self.tableau[-1][-1])
+        return self.tableau[-1][-1]
 
 if __name__=="__main__":
     A = np.array([
@@ -52,7 +52,7 @@ if __name__=="__main__":
             [-1, -1]
         ])
     b = np.array([1, 1, 1, 1])
-    c = np.array([[-2, -1]])
+    c = np.array([[2, -1]])
     solver = Symplex().fit(A, b, c)
-    solver.result()
+    print(solver.result())
     print(solver.tableau)

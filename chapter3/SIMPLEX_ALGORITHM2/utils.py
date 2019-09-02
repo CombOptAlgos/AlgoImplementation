@@ -84,7 +84,7 @@ def get_indices(tableau):
             i = i_
             break
     if i is None:
-        return i, j  # ともにNone
+        return i, j  # Both are None
 
     for j_ in range(n_rows-1):
         if tableau[j_][i] > eps:
@@ -93,37 +93,29 @@ def get_indices(tableau):
             else:
                 lambda_j_ = culc_lambda(tableau, i, j_)
                 lambda_j = culc_lambda(tableau, i, j)
-                assert lambda_j is not None, "Error!"
-                assert lambda_j_ is not None, "Error!"
                 if lambda_j_ < lambda_j:
                     j = j_
     return i, j
 
 
 def culc_lambda(tableau, i, j):
-        """get i, j from tableau
+    """get i, j from tableau
 
     Parameters
     ----------
-    tableu : ndarray
+    
     
     Returns
     -------
-    i : int
-    j : int
+    lambda_
     
     Examples
     --------
-    >>> import numpy as np
-    >>> tableau1 = np.array([[1, 2, 3],[4, 5, 6],[-1, -7, 8]])
-    >>> get_indices(tableau1)
-    (0, 1)
-    >>> tableau2 = np.array([[1, 2, 3],[4, 5, 10],[1, -7, -8]])
-    >>> get_indices(tableau2)
-    (1, 0)
-    return tableau[j][-1] / tableau[j][i]
+    
     """
-
+    
+    lambda_ = tableau[j][-1] / tableau[j][i]
+    return lambda_
 
 def sweep_out(tableau, i, j):
     """sweep out tableau table
