@@ -147,28 +147,36 @@ def reuse(A, b, c, tableau):
     return tableau
 
 
+
 def symplex():
     A = np.array([
+        [1, -1],
+        [1, 1],
         [-1, 1],
-        [0, -1],
-        [1, 0]
+        [-1,-1]
     ])
-    b = np.array([0,1,1])
-    c = np.array([[-1/2,1]])
+    b = np.array([1,1,1,1])*-1
+    c = np.array([[0,-1]])
     tableau = make_tableau(A, b)
-
+    print(pd.DataFrame(tableau))
     i, j = get_indices(tableau)
     while i is not None and j is not None:
         tableau = sweep_out(tableau, i, j)
         i, j = get_indices(tableau)
 
     tableau = reuse(A, b, c, tableau)
+
+    assert tableau[-1][-1] == sum([-i for i in b if i<0]), "LP has no solution (infeasible)"
+
     i, j = get_indices(tableau)
+    print(pd.DataFrame(tableau))
     while i is not None and j is not None:
         tableau = sweep_out(tableau, i, j)
         print(pd.DataFrame(tableau))
         i, j = get_indices(tableau)
-    assert j is not None, "LP has no solution (unbounded)"
+    print(i, j)
+    if i is not None:
+        assert j is not None, "LP has no solution (unbounded)"
     print(pd.DataFrame(tableau))
     return tableau[-1][-1]
 
