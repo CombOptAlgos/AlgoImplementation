@@ -1,10 +1,9 @@
 import numpy as np
-import pandas as pd
 from utils import make_tableau, get_indices, sweep_out, renew
 
 
 class Symplex:
-    """SIMPLEX ALGORYTHM
+    """SIMPLEX ALGORITHM
     Input:
         int m, n
         A: m * n matrix
@@ -46,7 +45,7 @@ class Symplex:
         b : array-like, shape = [n_inequalities]
             Intercept vector of inequality system
 
-        c : array-like, shape = [n_valiables]
+        c : array-like, shape = [n_variables]
             Coefficient vector of objective function
 
         Returns
@@ -68,7 +67,6 @@ class Symplex:
         i, j = get_indices(self.tableau)
         while i is not None and j is not None:
             self.tableau = sweep_out(self.tableau, i, j)
-            print(pd.DataFrame(self.tableau))
             i, j = get_indices(self.tableau)
         if i is not None:
             assert j is not None, "LP has no solution (unbounded)"
