@@ -28,8 +28,8 @@ class Symplex:
 
         self.tableau = reuse(A, b, c, self.tableau)
 
-        assert self.tableau[-1][-1] == sum([-i for i in b if i < 0]
-                                    ), "LP has no solution (infeasible)"
+        assert self.tableau[-1][-1] == sum([-i for i in b if i < 0]), \
+            "LP has no solution (infeasible)"
 
         i, j = get_indices(self.tableau)
         while i is not None and j is not None:
@@ -40,11 +40,11 @@ class Symplex:
             assert j is not None, "LP has no solution (unbounded)"
         return self
 
-
     def result(self):
         return self.tableau[-1][-1]
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     A = np.array([
             [1, -1],
             [1, 1],

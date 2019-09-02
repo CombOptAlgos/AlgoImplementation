@@ -1,7 +1,7 @@
 import numpy as np
-import pandas as pd
 
 eps = 1e-5
+
 
 def make_tableau(A, b):
     """make initial tableau table
@@ -58,12 +58,12 @@ def get_indices(tableau):
     Parameters
     ----------
     tableu : ndarray
-    
+
     Returns
     -------
     i : int
     j : int
-    
+
     Examples
     --------
     >>> import numpy as np
@@ -103,19 +103,19 @@ def culc_lambda(tableau, i, j):
 
     Parameters
     ----------
-    
-    
+
     Returns
     -------
     lambda_
-    
+
     Examples
     --------
-    
+
     """
-    
+
     lambda_ = tableau[j][-1] / tableau[j][i]
     return lambda_
+
 
 def sweep_out(tableau, i, j):
     """sweep out tableau table
@@ -144,12 +144,12 @@ def reuse(A, b, c, tableau):
     Parameters
     ----------
     tableu : ndarray
-    
+
     Returns
     -------
     i : int
     j : int
-    
+
     Examples
     --------
     >>> import numpy as np
@@ -163,18 +163,11 @@ def reuse(A, b, c, tableau):
     A = A.astype(np.float32)
 
     m, n = A.shape
-    is_nonnegative = b.flatten() >= 0
     is_negative = b.flatten() < 0
-    A_ = A[is_nonnegative]
-    b_ = b[is_nonnegative].reshape(-1, 1)
-    A__ = A[is_negative]
-    b__ = b[is_negative].reshape(-1, 1)
-    m_ = sum(is_nonnegative)
     m__ = sum(is_negative)
 
     for i in range(n+m, n+m+m__):
         # i列目が単位行列か判定
-        is_unit = True
         idx_one = None
         for j in range(m+1):
             if abs(tableau[j][i] - 1) < eps:
