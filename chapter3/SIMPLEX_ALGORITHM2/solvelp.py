@@ -1,3 +1,8 @@
+"""
+LP: max{x : Ax<=b, x>=0}の最適解を求めるプログラム
+"""
+
+
 import numpy as np
 import pandas as pd
 
@@ -155,8 +160,8 @@ def symplex():
         [-1, 1],
         [-1,-1]
     ])
-    b = np.array([1,1,1,1])*-1
-    c = np.array([[0,-1]])
+    b = np.array([1,1,1,1])
+    c = np.array([[-2,-1]])
     tableau = make_tableau(A, b)
     print(pd.DataFrame(tableau))
     i, j = get_indices(tableau)
@@ -184,3 +189,4 @@ def symplex():
 if __name__=="__main__":
     res = symplex()
     print(res)
+
