@@ -3,8 +3,8 @@
 ## Directory Structure
 
 ```
-.
 ├── __init__.py
+├── main.py
 ├── requirements.txt
 ├── solvelp.py
 └── utils.py
