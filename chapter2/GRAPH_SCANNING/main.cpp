@@ -4,7 +4,7 @@ using namespace std;
 
 using Graph = vector<vector<int> >;
 
-Graph graph_scanning(Graph G, int N, int s) {
+Graph GRAPH_SCANNING(Graph G, int N, int s) {
 
     vector<bool> R(N, false);
     vector<int> Q;
@@ -47,7 +47,7 @@ int main(){
         G[b].push_back(a);
     }
 
-    Graph T = graph_scanning(G, N, s);
+    Graph T = GRAPH_SCANNING(G, N, s);
 
     rep(i, N){
         if (!T[i].empty()){
