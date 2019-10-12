@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
-using namespace std;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
-
+using namespace std;
 using Graph = vector<vector<int> >;
 
 Graph GRAPH_SCANNING(Graph G, int N, int s) {
@@ -31,7 +30,6 @@ Graph GRAPH_SCANNING(Graph G, int N, int s) {
     }
     return T;
 }
-
 
 int main(){
 
