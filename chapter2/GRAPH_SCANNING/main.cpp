@@ -3,11 +3,11 @@
 using namespace std;
 using Graph = vector<vector<int> >;
 
-Graph GRAPH_SCANNING(Graph G, int N, int s) {
+vector<bool> GRAPH_SCANNING(Graph G, int N, int s) {
 
     vector<bool> R(N, false);
     vector<int> Q;
-    Graph T(N);
+    // Graph T(N);
     R[s] = true; //seen
     Q.push_back(s); //todo
 
@@ -22,13 +22,13 @@ Graph GRAPH_SCANNING(Graph G, int N, int s) {
                 {
                     R[w] = true;
                     Q.push_back(w);
-                    T[v].push_back(w);
+                    // T[v].push_back(w);
                 }
             }
         }
         Q.erase(Q.begin()); // Q-v
     }
-    return T;
+    return R;
 }
 
 int main(){
@@ -45,16 +45,23 @@ int main(){
         G[b].push_back(a);
     }
 
-    Graph T = GRAPH_SCANNING(G, N, s);
+    vector<bool> R = GRAPH_SCANNING(G, N, s);
 
     rep(i, N){
-        if (!T[i].empty()){
-            rep(j,T[i].size())
-            {
-                cout << i << T[i][j];
-                cout << endl;
-            }
+        if (R[i]){
+            cout << i << ' ';
         }
     }
+    cout << endl;
+
+//    rep(i, N){
+//        if (!T[i].empty()){
+//            rep(j,T[i].size())
+//            {
+//                cout << i << ' ' << T[i][j] << endl;
+//            }
+//        }
+//    }
+
     return 0;
 }
