@@ -11,4 +11,5 @@ You should implement some algorithms introduced in "Combinatorial Optimization" 
 - SIMPLEX_ALGORITHM (chapter3)
 
 ## Completed Implementation
-- None.
+- GRAPH_SCANNING
+- STORONGLY_CONNECTED_COMPONENT
