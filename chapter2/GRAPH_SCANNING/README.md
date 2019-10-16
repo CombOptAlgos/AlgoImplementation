@@ -1,6 +1,6 @@
-# Graph Scanning Algolithm Imprementation
+## Graph Scanning Algolithm Imprementation
 
-## Build manual
+### Build manual
 
 ```bash
 mkdir build
@@ -10,9 +10,9 @@ make
 ./GRAPH_SCANNING
 ```
 
-## Input
+### Instance
 
-example
+- example
 V(G) = {0, 1, 2, 3, 4}
 E(G) = {{0, 1}, {1, 2}, {2, 0}, {3, 4}}
 
@@ -24,7 +24,9 @@ E(G) = {{0, 1}, {1, 2}, {2, 0}, {3, 4}}
 2 0
 3 4
 ```
-output (vertices reachable from start vertex) 
+- output 
+vertices reachable from start vertex 
+
 ```bash
 0 1 2
 ```

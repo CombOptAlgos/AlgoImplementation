@@ -1,6 +1,6 @@
-# Storongly Connected Component Algolithm Imprementation
+## Storongly Connected Component Algolithm Imprementation
 
-## Build manual
+### Build manual
 
 ```bash
 mkdir build
@@ -10,9 +10,9 @@ make
 ./STRONGLY_CONNECTED_COMPONENT
 ```
 
-## Input
+### instance
 
-example
+- example
 V(G) = {0, 1, 2, 3, 4}
 E(G) = {(0, 1), (1, 2), (2, 0), (3, 4)}
 
@@ -23,7 +23,7 @@ E(G) = {(0, 1), (1, 2), (2, 0), (3, 4)}
 2 0
 3 4
 ```
-output 
+- output 
 ```bash
 0 0 # vertices comp_value
 1 0
