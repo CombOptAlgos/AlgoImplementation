@@ -12,7 +12,7 @@ make
 
 ### Instance
 
-- example  
+- input example  
 V(G) = {0, 1, 2, 3, 4}  
 E(G) = {{0, 1}, {1, 2}, {2, 0}, {3, 4}}  
 
