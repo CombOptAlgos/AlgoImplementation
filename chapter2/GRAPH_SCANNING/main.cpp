@@ -49,7 +49,7 @@ int main(){
     cout << "The vertices reachable from  " << s << " is:" << endl;
     rep(i, N){
         if (R[i]){
-            cout << i << ' ';
+            cout << (i==0 ? "" : " ") << i;
         }
     }
     cout << endl;
