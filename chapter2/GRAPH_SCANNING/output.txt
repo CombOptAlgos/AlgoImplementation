@@ -1,0 +1,2 @@
+The vertices reachable from  2 is:
+0 1 2
