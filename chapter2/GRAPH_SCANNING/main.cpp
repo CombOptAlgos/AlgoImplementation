@@ -3,17 +3,17 @@
 using namespace std;
 using Graph = vector<vector<int> >;
 
-Graph GRAPH_SCANNING(Graph G, int N, int s) {
+vector<bool> GRAPH_SCANNING(Graph G, int N, int s) {
 
     vector<bool> R(N, false);
-    vector<int> Q;
-    Graph T(N);
+    queue<int> Q;
+    // Graph T(N);
     R[s] = true; //seen
-    Q.push_back(s); //todo
+    Q.push(s); //todo
 
     while (!Q.empty()) {
 
-        int v = Q[0]; // BFS
+        int v = Q.front(); // BFS
 
         if (!G[v].empty()) {
             rep(i, G[v].size()) {
@@ -21,14 +21,13 @@ Graph GRAPH_SCANNING(Graph G, int N, int s) {
                 if (!R[w]) // w in V/R
                 {
                     R[w] = true;
-                    Q.push_back(w);
-                    T[v].push_back(w);
+                    Q.push(w);
                 }
             }
         }
-        Q.erase(Q.begin()); // Q-v
+        Q.pop();// Q-v
     }
-    return T;
+    return R;
 }
 
 int main(){
@@ -45,16 +44,15 @@ int main(){
         G[b].push_back(a);
     }
 
-    Graph T = GRAPH_SCANNING(G, N, s);
+    vector<bool> R = GRAPH_SCANNING(G, N, s);
 
+    cout << "The vertices reachable from  " << s << " is:" << endl;
     rep(i, N){
-        if (!T[i].empty()){
-            rep(j,T[i].size())
-            {
-                cout << i << T[i][j];
-                cout << endl;
-            }
+        if (R[i]){
+            cout << i << ' ';
         }
     }
+    cout << endl;
+
     return 0;
 }
