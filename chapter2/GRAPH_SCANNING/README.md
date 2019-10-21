@@ -1,24 +1,25 @@
-# Graph Scanning Algolithm Imprementation == 1.0.1
+# Graph Scanning Algolithm Imprementation
 
 ## Change Point
-    - Implemented with queue
+
+- Implemented with queue
 
 ## Usage
 
+First, pleasre open and rewite `input.txt` as follows.
 ```
 $ open input.txt
 ```
-
-Please 
-
 First line is `|V(G)| |E(G)|`
 
 Secind line is `start vertex`
 
-After the 3rd line, please write all the edges ends;
+After the 3rd line, write all the edges ends;
 
 - Example
-```input.txt
+
+input.txt
+```
 5 4 
 2    
 0 1
@@ -27,7 +28,7 @@ After the 3rd line, please write all the edges ends;
 3 4
 ```
 
-Then, build and run.
+Then, let's' build and run.
 
 ```
 $ c++ -std=c++11 main.cpp
@@ -40,7 +41,9 @@ $ open output.txt
 ```
 
 - Example
-```Output.txt
+
+Output.txt
+```
 The vertices reachable from  2 is:
 0 1 2
 ```
