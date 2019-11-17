@@ -1,0 +1,12 @@
+Done!
+s: 2
+distance between s and 1 : Unreachable
+distance between s and 2 : 0
+distance between s and 3 : Unreachable
+distance between s and 4 : Unreachable
+distance between s and 5 : 0
+
+parent of 1: 0
+parent of 3: 0
+parent of 4: 0
+parent of 5: 1
