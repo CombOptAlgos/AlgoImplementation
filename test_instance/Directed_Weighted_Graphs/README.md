@@ -6,7 +6,7 @@ cd build
 cmake ..
 make 
 ./Directed_Weighted_Graphs > ../output_txt/test.txt
-'''
+```
 
 ## How to visualize
 
@@ -20,5 +20,5 @@ make
 
 dot -Tpng < ../output_dot/test.dot > ../,,/output_png/test.png 
 open ../,,/output_png/test.png
-'''
+```
 
