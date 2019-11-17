@@ -9,10 +9,6 @@ int N, M;
 vector<vector<int> > B;
 queue<int> E;
 
-void merge(int a, int b) {
-    
-}
-
 int main() {
     cin >> N >> M;
     
