@@ -1,50 +1,36 @@
 # Graph Scanning Algolithm Imprementation
 
-## Change Point
+``
+### Build manual
 
-- Implemented with queue
-
-## Usage
-
-First, pleasre open and rewite `input.txt` as follows.
+```bash
+mkdir build
+cd build
+cmake ..
+make
+./GRAPH_SCANNING < input.txt > output.txt
 ```
-$ open input.txt
-```
-First line is `|V(G)| |E(G)|`
 
-Secind line is `start vertex`
+### Instance
 
-After the 3rd line, write all the edges ends;
+- input example  
+V(G) = {0, 1, 2, 3, 4}  
+E(G) = {{0, 1}, {1, 2}, {2, 0}, {3, 4}}  
 
-- Example
-
-input.txt
-```
-5 4 
-2    
+```bash
+5 4  # |V(G)| |E(G)|
+2    # start vertex
 0 1
 1 2
 2 0
 3 4
 ```
+- output   
+vertices reachable from start vertex 
 
-Then, let's' build and run.
-
-```
-$ c++ -std=c++11 main.cpp
-$ ./a.out < input.txt > output.txt
-```
-
-You can check the result to open `output.txt`.
-```
-$ open output.txt
-```
-
-- Example
-
-Output.txt
-```
-The vertices reachable from  2 is:
+```bash
 0 1 2
 ```
+
+
 
