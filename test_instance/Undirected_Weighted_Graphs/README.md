@@ -18,7 +18,7 @@ cmake ..
 make
 ./graphviz < ../../output_txt/test.txt > ../output_dot/test.dot
 
-dot -Tpng < ../output_dot/test.dot > ../,,/output_png/test.png 
-open ../,,/output_png/test.png
+dot -Tpng < ../output_dot/test.dot > ../../output_png/test.png 
+open ../../output_png/test.png
 ```
 
