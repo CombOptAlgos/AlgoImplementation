@@ -40,7 +40,8 @@ def main():
     with open(path_w, mode='w') as f:
         f.write(str(N)+" "+str(MAX_M)+"\n")
         for e in edges:
-            f.write(str(e[0])+" "+str(e[1])+" "+str(random.randint(1, MAX_W))+"\n")
+            if e[0] != e[1]:
+                f.write(str(e[0])+" "+str(e[1])+" "+str(random.randint(1, MAX_W))+"\n")
 
 if __name__ == "__main__":
     main()
