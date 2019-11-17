@@ -1,6 +1,5 @@
 # Graph Scanning Algolithm Imprementation
 
-``
 ### Build manual
 
 ```bash
