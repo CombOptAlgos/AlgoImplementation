@@ -25,6 +25,7 @@ vector<bool> GRAPH_SCANNING(Graph G, int N, int s) {
                 {
                     R[w] = true;
                     Q.push(w);
+                    // T[v].push_back(w); BFS tree
                 }
             }
         }
@@ -56,5 +57,15 @@ int main(){
     }
     cout << endl;
 
+// output of BFS trew 
+//    rep(i, N){
+//        if (!T[i].empty()){
+//            rep(j,T[i].size())
+//            {
+//                cout << i << ' ' << T[i][j] << endl;
+//            }
+//        }
+//    }
+  
     return 0;
 }

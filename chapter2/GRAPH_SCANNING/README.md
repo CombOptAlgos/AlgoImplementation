@@ -30,6 +30,3 @@ vertices reachable from start vertex
 ```bash
 0 1 2
 ```
-
-
-
