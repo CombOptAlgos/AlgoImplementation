@@ -1,4 +1,7 @@
-#include <bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<queue>
+
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 using namespace std;
 using Graph = vector<vector<int> >;
@@ -6,14 +9,14 @@ using Graph = vector<vector<int> >;
 vector<bool> GRAPH_SCANNING(Graph G, int N, int s) {
 
     vector<bool> R(N, false);
-    vector<int> Q;
+    queue<int> Q;
     // Graph T(N);
     R[s] = true; //seen
-    Q.push_back(s); //todo
+    Q.push(s); //todo
 
     while (!Q.empty()) {
 
-        int v = Q[0]; // BFS
+        int v = Q.front(); // BFS
 
         if (!G[v].empty()) {
             rep(i, G[v].size()) {
@@ -21,12 +24,12 @@ vector<bool> GRAPH_SCANNING(Graph G, int N, int s) {
                 if (!R[w]) // w in V/R
                 {
                     R[w] = true;
-                    Q.push_back(w);
-                    // T[v].push_back(w);
+                    Q.push(w);
+                    // T[v].push_back(w); BFS tree
                 }
             }
         }
-        Q.erase(Q.begin()); // Q-v
+        Q.pop();// Q-v
     }
     return R;
 }
@@ -49,11 +52,12 @@ int main(){
 
     rep(i, N){
         if (R[i]){
-            cout << i << ' ';
+            cout << (i==0 ? "" : " ") << i;
         }
     }
     cout << endl;
 
+// output of BFS trew 
 //    rep(i, N){
 //        if (!T[i].empty()){
 //            rep(j,T[i].size())
@@ -62,6 +66,6 @@ int main(){
 //            }
 //        }
 //    }
-
+  
     return 0;
 }
