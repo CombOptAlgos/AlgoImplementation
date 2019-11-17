@@ -1,6 +1,9 @@
 // A C++ Program to generate test cases for
 // an weighted undirected graph
-#include<bits/stdc++.h>
+#include<iostream>
+#include<utility>
+#include<set>
+
 using namespace std;
 
 // Define the number of runs for the test data
