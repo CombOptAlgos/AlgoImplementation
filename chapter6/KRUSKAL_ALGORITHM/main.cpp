@@ -19,14 +19,13 @@ int main() {
     
     int a, b; // two vertices
     sort(W.begin(), W.end());
+    reverse(W.begin(), W.end());
 
     for (int i=0; i<M; i++) {
         a = get<1>(W[i]);
         b = get<2>(W[i]);
-        if (B.share_same_parent(a, b)) {
+        if (!B.share_same_parent(a, b)) {
             E.push(i);
-        }
-        else {
             B.merge(a, b); 
         }
     }
