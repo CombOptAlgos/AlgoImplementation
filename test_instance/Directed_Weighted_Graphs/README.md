@@ -10,7 +10,7 @@ make
 
 ## How to visualize
 
-'''bash
+```bash
 cd graphviz
 mkdir build
 cd build
