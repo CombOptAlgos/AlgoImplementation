@@ -4,6 +4,13 @@ This algorithm finds shortest path from s to all the other vertices in O(nm) tim
 
 ## Usage
 
+#### 1. Open and edit input.txt
+
+input.txt has the format below.
+
+N M s
+tail head weight (xM) 
+
 ```input.txt
 5 7 2
 1 2 1
@@ -15,13 +22,18 @@ This algorithm finds shortest path from s to all the other vertices in O(nm) tim
 4 5 4
 ```
 
+#### 2. Run
+
 ```
 $ c++ main.cpp
 $ ./a.out < input.txt > output.txt
 ```
 
+#### 3. Check the result
+
+open output.txt
+
 ```output.txt
-Done!
 s: 2
 distance between s and 1 : Unreachable
 distance between s and 2 : 0

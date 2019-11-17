@@ -29,7 +29,6 @@ void moore_bellman_ford() {
 
 int main() {
     cin >> N >> M >> s;
-    cout << "Done!" << endl;
     l.resize(N);
     p.resize(N);
     E.resize(M);
