@@ -8,8 +8,12 @@ This algorithm finds shortest path from s to all the other vertices in O(nm) tim
 
 input.txt has the format below.
 
+```
 N M s
 tail head weight (xM) 
+```
+
+##### example
 
 ```input.txt
 5 7 2
