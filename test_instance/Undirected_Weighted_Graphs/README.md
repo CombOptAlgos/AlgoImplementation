@@ -6,6 +6,7 @@ cd build
 cmake ..
 make 
 ./Undirected_Weighted_Graphs > ../output_txt/test.txt
+cd ..
 ```
 
 ## How to visualize
@@ -20,5 +21,6 @@ make
 
 dot -Tpng < ../output_dot/test.dot > ../../output_png/test.png 
 open ../../output_png/test.png
+cd ..
 ```
 
