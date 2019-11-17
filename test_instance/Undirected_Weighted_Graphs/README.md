@@ -5,7 +5,7 @@ mkdir build
 cd build
 cmake ..
 make 
-./Unirected_Weighted_Graphs > ../output_txt/test.txt
+./Undirected_Weighted_Graphs > ../output_txt/test.txt
 ```
 
 ## How to visualize
