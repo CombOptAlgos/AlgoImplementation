@@ -18,8 +18,7 @@ public:
     void merge(int a, int b);
 };
 
-Branching::Branching(int N, int M)
-{
+Branching::Branching(int N, int M) {
     this->N = N;
     this->M = M;
 
@@ -61,3 +60,4 @@ void Branching::merge(int a, int b) {
         T[r_b] = r_a;
         H[r_a]++;
     }
+}

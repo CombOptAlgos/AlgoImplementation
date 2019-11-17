@@ -2,11 +2,8 @@
 #include<vector>
 #include<queue>
 #include "Branching.h"
-
 using namespace std;
-
 int N, M;
-vector<vector<int> > B;
 queue<int> E;
 
 int main() {
@@ -35,7 +32,7 @@ int main() {
     }
 
     // output results
-    cout << N << E.size() << endl;
+    cout << N << " " << E.size() << endl;
     while (!E.empty()){
         tuple<int, int, int> e = W[E.front()];
         E.pop();
