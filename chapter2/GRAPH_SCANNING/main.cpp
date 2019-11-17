@@ -1,4 +1,7 @@
-#include <bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<queue>
+
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 using namespace std;
 using Graph = vector<vector<int> >;
@@ -46,7 +49,6 @@ int main(){
 
     vector<bool> R = GRAPH_SCANNING(G, N, s);
 
-    cout << "The vertices reachable from  " << s << " is:" << endl;
     rep(i, N){
         if (R[i]){
             cout << (i==0 ? "" : " ") << i;
