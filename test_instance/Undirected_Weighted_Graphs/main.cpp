@@ -8,7 +8,7 @@ using namespace std;
 
 // Define the number of runs for the test data
 // generated
-#define RUN 5
+#define RUN 1
 
 // Define the maximum number of vertices of the graph
 #define MAX_VERTICES 20
