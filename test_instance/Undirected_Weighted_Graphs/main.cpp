@@ -11,13 +11,13 @@ using namespace std;
 #define RUN 1
 
 // Define the maximum number of vertices of the graph
-#define MAX_VERTICES 20
+#define MAX_VERTICES 5
 
 // Define the maximum number of edges
-#define MAX_EDGES 200
+#define MAX_EDGES 10
 
 // Define the maximum weight of edges
-#define MAXWEIGHT 200
+#define MAXWEIGHT 5
 
 int main()
 {
