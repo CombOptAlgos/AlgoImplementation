@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <math.h>
+#include <queue>
 
 using namespace std;
 
@@ -53,16 +54,80 @@ private:
             b[node_degree] = node;
     };
 
-    Node* argmin() {
-        /* implement here */
-    };
-
-    void find_longest_path_and_update_psi() {
-        /* implement here */
+    Node* scan() {
+        int min = b[0]->key;
+        Node *argmin = b[0];
+        for (int i=1; i<b.size(); i++) {
+            if (b[i]!=nullptr && b[i]->key<min) {
+                min = b[i]->key;
+                argmin = b[i];
+            }
+        }
+        return argmin;
     };
 
     void del(Node* node) {
-        /* implement here */
+        if (node->root) {
+            for (int i=0; i<node->children.size(); i++) {
+                node->children[i]->root=true;
+                node->children[i]->parent=nullptr;
+            }
+        } else {
+            for (int i=0; i<node->children.size(); i++) {
+                node->children[i]->parent = node->parent;
+                node->parent->children.push_back(node->children[i]);
+            }
+            node->parent->degree += node->children.size();
+        }
+    };
+
+    Node *find_longest_path_and_update_psi(
+            Node *node, vector<Node*> node_list) {
+        node_list.push_back(node);
+        if (node->parent->psi==0 || node->parent->root) {
+            node->root = true;
+            auto iter = find(node->parent->children.begin(),
+                    node->parent->children.end(), node);
+            node->parent->children.erase(iter);
+            node->parent->degree--;
+            node->list.push_back(node->parent);
+            node->parent = nullptr;
+            return node_list;
+        } else {
+            node->root = true;
+            node->parent->psi = 0;
+            auto iter = find(node->parent->children.begin(),
+                    node->parent->children.end(), node);
+            node->parent->children.erase(iter);
+            Node *tmp = node->parent;
+            node->parent = nullptr;
+            find_longest_path_and_update_psi(tmp);
+        }
+    };
+
+    Node *search_and_update_node_cost(Key key, Val val) {
+        for (int i=0; i<b.size(); i++) {
+            if (b[i]->root) {
+                if (b[i]->val==val)
+                    return b[i];
+                Node *tmp = b[i];
+                queue<Node*> search_queue;
+                while (true) {
+                    for (int i=0; i<tmp->children.size(); i++) {
+                        if (tmp->children[i]->val==val)
+                            return tmp->children[i];
+                        else
+                            search_queue.push(tmp->children[i]);
+                    }
+                    if (search_queue.front()!=nullptr) {
+                        tmp = search_queue.front();
+                        search_queue.pop();
+                    } else
+                        break;
+                }
+                throw;
+            }
+        }
     };
 
 public:
@@ -81,13 +146,21 @@ public:
     };
 
     Val deletemin() {
-        /* implement here */
+        Node *argmin = scan();
+        del(argmin);
+        for (int i=0; i<argmin->children.size(); i++)
+            plant(argmin->children[i]);
+        argmin = nullptr;
+        delete argmin;
     };
 
     void decreasekey(Key key, Val val) {
-        /* imploement here */
+        Node *updated = search_and_update_node_cost(key, val);
+        vector<Node*> longest_path = 
+            find_longest_path_and_update_psi(updated);
+        for(int i=0; i<longest_path.size(); i++)
+            plant(longest_path[i]);
     };
 
 };
- 
 #endif // FIB_HEAP_FIB_HEAP_H
