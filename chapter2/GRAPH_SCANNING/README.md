@@ -1,4 +1,4 @@
-## Graph Scanning Algolithm Imprementation
+# Graph Scanning Algolithm Imprementation
 
 ### Build manual
 
@@ -7,7 +7,7 @@ mkdir build
 cd build
 cmake ..
 make
-./GRAPH_SCANNING
+./GRAPH_SCANNING < input.txt > output.txt
 ```
 
 ### Instance
@@ -30,5 +30,3 @@ vertices reachable from start vertex
 ```bash
 0 1 2
 ```
-
-
