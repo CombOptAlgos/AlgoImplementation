@@ -30,6 +30,9 @@ $ ./a.out < input.txt > output.txt
 
 The output consists of |V| lines. Print the cost of the shortest path from the source r to each vertex 0, 1, ... |V|−1 in order. If there is no path from the source to a vertex, print INF.
 
+```
+$ open output.txt
+```
 
 ## Test Case
 
