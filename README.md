@@ -14,6 +14,8 @@ You should implement some algorithms introduced in "Combinatorial Optimization" 
 #### chapter 2
 - GRAPH_SCANNING
 - STORONGLY_CONNECTED_COMPONENT
+- EULER'S
+
 #### chapter 7
 - FLOYD_WARSHALL
 
