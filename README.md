@@ -21,4 +21,3 @@ You should implement some algorithms introduced in "Combinatorial Optimization" 
 - STORONGLY_CONNECTED_COMPONENT
 #### chapter 7
 - FLOYD_WARSHALL
-
