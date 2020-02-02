@@ -4,23 +4,17 @@
 using namespace std;
 const int INF = 999999999;
 
-// 枝の構造体（行先のvertex, capacity, 逆辺のid）
-struct edge {int to, capacity, rev_id;};
+// 枝の構造体（行先のvertex, みなしcapacity, 逆辺のid, capacity）
+struct edge {int to, capacity, rev_id, raw_capacity;};
 
 // Graphの隣接リスト
 using Graph = vector<vector<edge> >;
 
-// Graphに枝を追加
-void add_edge(Graph &G, int from, int to, int capacity){
-
-    G[from].push_back( (edge){to, capacity, (int)G[to].size()} );
-}
-
 // two arrow Graphに枝を追加
 void add_edge_two_arrow(Graph &G, int from, int to, int capacity){
 
-    G[from].push_back( (edge){to, capacity, (int)G[to].size()} );
-    G[to].push_back( (edge){from, 0, (int)G[from].size()-1} );
+    G[from].push_back( (edge){to, capacity, (int)G[to].size(), capacity} );
+    G[to].push_back( (edge){from, 0, (int)G[from].size()-1, 0} );
 }
 
 // f-augmenting pathの計算
@@ -65,9 +59,10 @@ vector<pair <int, int> > dfs(Graph G, int v, int t, int N, bool &end_frag){
 int compute_gamma(Graph G, vector<pair<int, int> > path, int s, int v){
 
     int gamma = INF;
+    int index;
 
     while(1){
-        int index = path[v].second;
+        index = path[v].second;
         v = path[v].first;
 
         gamma = (gamma < G[v][index].capacity ? gamma : G[v][index].capacity);
@@ -80,10 +75,11 @@ int compute_gamma(Graph G, vector<pair<int, int> > path, int s, int v){
 
 // augment
 void augment(Graph &G, vector<pair<int, int> > path, int gamma, int s, int v){
+    int index;
 
     while(1){
 
-        int index = path[v].second;
+        index = path[v].second;
         v = path[v].first;
 
         // path上の辺
@@ -102,11 +98,10 @@ int main(){
     // Graph入力
     int N, M; cin >> N >> M;
     int s, t; cin >> s >> t;
-    Graph G(N), G2(N); // graph, two_arrow_graph
+    Graph G(N); // two_arrow_graph
     rep(i, M){
         int from, to, cap; cin >> from >> to >> cap;
-        add_edge(G, from, to, cap);
-        add_edge_two_arrow(G2, from, to, cap);
+        add_edge_two_arrow(G, from, to, cap);
     }
 
     // 初期化
@@ -115,21 +110,25 @@ int main(){
     // FORD FULKERSON
     while(1){
         // find augmenting s-t path
-        vector<pair<int, int> > path = dfs(G2, s, t, N, end_frag);
+        vector<pair<int, int> > path = dfs(G, s, t, N, end_frag);
         if (end_frag) break;
 
         // compute gamma
-        int gamma = compute_gamma(G2, path, s, t);
+        int gamma = compute_gamma(G, path, s, t);
 
         // augment f along path by gamma
-        augment(G2, path, gamma, s, t);
+        augment(G, path, gamma, s, t);
     }
 
     // max flowの出力
+    int f;
+    cout << "v_from " << "v_to " << "flow" << endl;
     rep(v, N){
         rep(i, G[v].size()){
-            int f = G[v][i].capacity - G2[v][i].capacity;
-            cout << v << ' ' << G[v][i].to << ' ' << f << endl;
+            if (G[v][i].raw_capacity != 0){
+                f = G[v][i].raw_capacity - G[v][i].capacity; // 元のcapacityとみなしcapacityの差がflow
+                cout << v << ' ' << G[v][i].to << ' ' << f << endl;
+            }
         }
     }
 
