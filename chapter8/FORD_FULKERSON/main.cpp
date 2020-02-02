@@ -25,8 +25,9 @@ void add_edge_two_arrow(Graph &G, int from, int to, int capacity){
 
 // f-augmenting pathの計算
 vector<int> dfs(Graph G, int v, int t, int N, bool &end_frag){
+    cout << "hello world!" << endl;
     vector<int> path(N);
-    vector<bool> seen(N);
+    vector<bool> seen(N, false);
     end_frag = true;
 
     // 探索済みの頂点
@@ -85,7 +86,7 @@ int main(){
     int N, M; cin >> N >> M;
     int s, t; cin >> s >> t;
     Graph G(N), G2(N); // graph, two_arrow_graph
-    rep(i, N){
+    rep(i, M){
         int from, to, cap; cin >> from >> to >> cap;
         add_edge(G, from, to, cap);
         add_edge_two_arrow(G2, from, to, cap);
@@ -98,20 +99,23 @@ int main(){
     while(1){
         // find augmenting s-t path
         vector<int> path = dfs(G2, s, t, N, end_frag);
+        cout << "dfs ok" << endl;
         if (end_frag) break;
 
         // compute gamma
         int gamma = compute_gamma(G2, path, s, t);
+        cout << "gamma" << endl;
 
         // augment f along path by gamma
         augment(G2, path, gamma, s, t);
+        cout << "augment" << endl;
     }
 
     // max flowの出力
     rep(v, N){
         rep(i, G[v].size()){
             int f = G[v][i].capacity - G2[v][i].capacity;
-            cout << v << G[v][i].to << f << endl;
+            cout << v << ' ' << G[v][i].to << ' ' << f << endl;
         }
     }
 
