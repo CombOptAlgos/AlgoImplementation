@@ -18,19 +18,19 @@ private:
         int psi;
         int degree;
         struct node* parent;
-        vector<struct node*> childlen;
+        vector <struct node*> children;
     } Node;
 
     vector<Node*> b;
 
     Node *generate_node(Key key, Val val) {
         Node node;
-        node->key = key;
-        node->val = val;
-        node->root = false;
-        node->psi = 0;
-        node->degree = 0;
-        node->parent = nullptr;
+        node.key = key;
+        node.val = val;
+        node.root = false;
+        node.psi = 0;
+        node.degree = 0;
+        node.parent = nullptr;
         return &node;
     };
 
@@ -38,7 +38,7 @@ private:
         int node_degree = node->degree;
         Node *r = b[node_degree];
         if (r!=nullptr && r->root && r!=node && node_degree==r->degree) {
-            if (r->key<=node->key) {
+            if (r->val<=node->val) {
                 r->children.push_back(node);
                 r->degree++;
                 node->parent = r;
@@ -47,8 +47,9 @@ private:
                 node->children.push_back(r);
                 node->root = true;
                 node->degree++;
-                r->parent = node;
                 r->root = false;
+                r->parent = node;
+                plant(node);
             }
         } else
             b[node_degree] = node;
@@ -74,8 +75,8 @@ private:
             }
         } else {
             for (int i=0; i<node->children.size(); i++) {
-                node->children[i]->parent = node->parent;
                 node->parent->children.push_back(node->children[i]);
+                node->children[i]->parent = node->parent;
             }
             node->parent->degree += node->children.size();
         }
@@ -148,10 +149,12 @@ public:
     Val deletemin() {
         Node *argmin = scan();
         del(argmin);
+        Key argmin_key = argmin->key;
         for (int i=0; i<argmin->children.size(); i++)
             plant(argmin->children[i]);
         argmin = nullptr;
         delete argmin;
+        return argmin_key;
     };
 
     void decreasekey(Key key, Val val) {

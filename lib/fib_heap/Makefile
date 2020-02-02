@@ -1,4 +1,5 @@
 COMPILER = g++
+DEBUG = -g
 OUTPUT = -o
 SRC = fib_heap
 TEST = test_fib_heap
@@ -8,8 +9,8 @@ run: test
 	./$(TARGET)
 
 test: $(TEST).cpp $(SRC).h
-	$(COMPILER) $(TEST).cpp $(OUTPUT) $(TARGET)
+	$(COMPILER) $(DEBUG) $(TEST).cpp $(OUTPUT) $(TARGET)
 
 .PHONY:
 clean:
-	rm $(TEST).o $(TARGET)
+	rm $(TARGET)
