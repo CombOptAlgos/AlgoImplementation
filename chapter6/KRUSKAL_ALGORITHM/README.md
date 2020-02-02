@@ -14,7 +14,7 @@ input.txt has the format below.
 
 ```
 N M
-tail head weight
+tail head weight (xM)
 ```
 
 ##### example
