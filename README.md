@@ -1,5 +1,6 @@
 # AlgoImplementation
 You should implement some algorithms introduced in "Combinatorial Optimization" here.
+If you implement new algorithm, please overwrite below.
 
 ## Directory Structure
 - chapter
