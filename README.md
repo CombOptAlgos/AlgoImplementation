@@ -58,4 +58,3 @@ If you implement new algorithm, please overwrite below.
 |         | 426  | Greedy Alg.For Vertex Cover                  | -                 |
 |         | 428  | Bar-Yehuda-Even Alg.                         | -                 |
 | ...     |      |                                              |                   |
-|         |      |                                              |                   |
