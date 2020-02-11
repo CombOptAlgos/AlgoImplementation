@@ -55,6 +55,32 @@ If you implement new algorithm, please overwrite below.
 |         | 370  | Schrijver's Alg.                             | -                 |
 |         | 375  | Simple Submodular Function Maximization Alg. | -                 |
 | 16      | 424  | Greedy Alg. For Set Cover                    | -                 |
-|         | 426  | Greedy Alg.For Vertex Cover                  | -                 |
+|         | 426  | Greedy Alg. For Vertex Cover                 | -                 |
 |         | 428  | Bar-Yehuda-Even Alg.                         | -                 |
-| ...     |      |                                              |                   |
+|         | 433  | Goemans-Williamson Max-Cut Alg.              | -                 |
+|         | 438  | Greedy Colouring Alg.                        | -                 |
+|         | 447  | Johnson's Alg. For Max-Sat                   | -                 |
+|         | 448  | Goemans-Williamson Alg. For Max-Sat          | -                 |
+| 17      | 473  | Weighted Median Alg.                         | -                 |
+|         | 475  | Dynamic Programming Knapsack Alg.            | -                 |
+|         | 477  | Knapsack Approximation Scheme                | -                 |
+|         | 481  | Nemhauser-Ullmann Alg.                       | -                 |
+| 18      | 491  | Next-Fit Alg. (NF)                           | -                 |
+|         | 493  | First-Fit Alg. (FF)                          | -                 |
+|         |      | First-Fit-Decreasing Alg. (FFD)              | -                 |
+|         | 497  | Fernandez-de-la-Vega-Lueker Alg.             | -                 |
+| 19      | 516  | Multicommodity Flow Approximation Scheme     | -                 |
+| 20      | 546  | Dreyfus-Wagner Alg.                          | -                 |
+|         | 548  | Kou-Markowsky-Berman Alg.                    | -                 |
+|         | 552  | Robins-Zelikovsky Alg.                       | -                 |
+|         | 556  | Iterative Randomized Rounding Alg.           | -                 |
+|         | 566  | Primal-Dual Alg. For Network Design          | -                 |
+|         | 577  | Jain's Alg.                                  | -                 |
+| 21      | 593  | Double-Tree Alg.                             | -                 |
+|         |      | Christofides' Alg.                           | -                 |
+|         | 602  | Arora's Alg.                                 | -                 |
+|         | 604  | k-Opt Alg.                                   | -                 |
+|         | 606  | Lin-Kernighan Alg.                           | -                 |
+| 22      | 632  | Shmoys-Tardos-Aardal Alg.                    | -                 |
+|         | 634  | Jain-Vazirani Alg.                           | -                 |
+|         | 636  | Dual Fitting Alg.                            | -                 |
