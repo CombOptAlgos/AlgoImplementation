@@ -25,18 +25,20 @@ private:
 
     Node *generate_node(Key key, Val val) {
         Node node;
-        node.key = key;
-        node.val = val;
-        node.root = false;
-        node.psi = 0;
-        node.degree = 0;
-        node.parent = nullptr;
+        //node.key = key;
+        //node.val = val;
+        //node.root = false;
+        //node.psi = 0;
+        //node.degree = 0;
+        //node.parent = nullptr;
         return &node;
     };
 
     void plant(Node* node) {
         int node_degree = node->degree;
+        printf("%d %d\n", node->degree, node_degree);
         Node *r = b[node_degree];
+        printf("%d\n", r->degree);
         if (r!=nullptr && r->root && r!=node && node_degree==r->degree) {
             if (r->val<=node->val) {
                 r->children.push_back(node);
@@ -51,8 +53,13 @@ private:
                 r->parent = node;
                 plant(node);
             }
-        } else
+        } else {
+            if (node_degree==0) {
+                printf("%d %d\n", node->degree, node_degree);
+                node->root = true;
+            }
             b[node_degree] = node;
+        }
     };
 
     Node* scan() {

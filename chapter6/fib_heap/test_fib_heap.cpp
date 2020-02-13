@@ -3,7 +3,7 @@
 #define N 100
 
 int main() {
-    fib_heap <int, int> f(10*N);
+    fib_heap <int, int> f(N);
     // insert test
     for (int i=0; i<N; i++) {
         f.insert(i,i);
