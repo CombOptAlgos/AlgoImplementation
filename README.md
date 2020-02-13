@@ -12,7 +12,7 @@ If you implement new algorithm, please overwrite below.
 
 | Chapter | Page | Algorithm                                    | Implementation    |
 | ------- | ---- | -------------------------------------------- | ----------------- |
-| 1       | 3    | Path Enumeration Alg.                        | -                 |
+| 1       | 3    | Path Enumeration Alg.                        | Completed         |
 |         | 10   | Merge-Sort Alg.                              | -                 |
 | 2       | 26   | Graph Scanning Alg.                          | Completed         |
 |         | 29   | Strongly Connected Component Alg.            | Completed         |
@@ -22,7 +22,7 @@ If you implement new algorithm, please overwrite below.
 |         | 79   | Continued Fraction Expansion                 | -                 |
 |         | 81   | Gaussian Elimination                         | Completed         |
 |         | 85   | Ellipsoid Method                             | -                 |
-|         | 94   | Grötschel-Lovász-Schrijver Alg.              | -                 |
+|         | 94   | Grotschel-Lovasz-Schrijver Alg.              | -                 |
 | 6       | 136  | Kruskal's Alg.                               | Ongoing           |
 |         | 137  | Prim's Alg.                                  | -                 |
 |         | 138  | Fibonacci Heap                               | Ongoing           |
@@ -54,6 +54,7 @@ If you implement new algorithm, please overwrite below.
 |         | 363  | Polymatroid Greedy Alg.                      | -                 |
 |         | 370  | Schrijver's Alg.                             | -                 |
 |         | 375  | Simple Submodular Function Maximization Alg. | -                 |
+| 15      | 414  | Kernelization                                | -                 |
 | 16      | 424  | Greedy Alg. For Set Cover                    | -                 |
 |         | 426  | Greedy Alg. For Vertex Cover                 | -                 |
 |         | 428  | Bar-Yehuda-Even Alg.                         | -                 |
