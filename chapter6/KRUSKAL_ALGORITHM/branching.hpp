@@ -1,3 +1,6 @@
+#ifndef BRANCHING_HPP
+#define BRANCHING_HPP
+
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -5,20 +8,31 @@ using namespace std;
 class Branching 
 {
 private:
-    int N, M;
     vector<int> T;    
     vector<int> H;    
+    int N, M;
 
 public:
-    Branching(int N, int M);
+    void init(int N, int M);
     
     int root(int a);
     bool share_same_parent(int a, int b);
     int height(int r);
     void merge(int a, int b);
+
+    Branching(int M, int N);
+    Branching();
 };
 
-Branching::Branching(int N, int M) {
+Branching::Branching() {
+    do { } while (0); // NOP;
+}
+
+Branching::Branching(int M, int N) {
+    this->init(M, N);
+}
+
+void Branching::init(int N, int M) {
     this->N = N;
     this->M = M;
 
@@ -61,3 +75,4 @@ void Branching::merge(int a, int b) {
         H[r_a]++;
     }
 }
+#endif //defineBRANCHING_HPP
