@@ -45,8 +45,9 @@ $ open output.txt
 output.txt
 ```
 5 4
+1 5 3
 2 3 6
 2 4 5
 4 5 4
-1 5 3
+
 ```
