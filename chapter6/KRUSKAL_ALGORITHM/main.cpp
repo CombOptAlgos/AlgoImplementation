@@ -32,11 +32,11 @@ int main() {
     
     cout << N_T << " " << M_T << endl;
 
-    for (auto t_n : T)
+    for (int t_a=0; t_a<N; t_a++)
     {
-        for (int t_a=0; t_a<t_n.size(); t_a++) {
-            int t_b = t_n[t_a].first;
-            int t_w = t_n[t_a].second;
+        for (int j=0; j<T[t_a].size(); j++) {
+            int t_b = T[t_a][j].first;
+            int t_w = T[t_a][j].second;
             if (t_a < t_b) cout << t_a+1 << " " << t_b+1 << " " << t_w << endl;
         }
     }

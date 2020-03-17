@@ -75,6 +75,7 @@ Graph Kruskal::run()
             int t_a, t_b, t_w;
             tie(t_w, t_a, t_b) = e;
             T[t_a].push_back(make_tuple(t_b, t_w));
+            T[t_b].push_back(make_tuple(t_a, t_w));
         }    
     }
     return T;
