@@ -3,4 +3,4 @@ project(GRAPH_SCANNING)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(GRAPH_SCANNING dfs.cpp)
+add_executable(GRAPH_SCANNING main.cpp)

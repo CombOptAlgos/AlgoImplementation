@@ -7,7 +7,8 @@ mkdir build
 cd build
 cmake ..
 make
-./GRAPH_SCANNING < input.txt > output.txt
+./GRAPH_SCANNING < ../input.txt > ../output.txt
+cd ..
 ```
 
 ### Instance
