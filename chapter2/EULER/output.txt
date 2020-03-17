@@ -1,1 +1,1 @@
-This graph is not eulerian
+4 0 1 2 0 3 1 4 2 3 4 
