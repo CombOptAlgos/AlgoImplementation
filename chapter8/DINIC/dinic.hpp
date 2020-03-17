@@ -211,7 +211,7 @@ void output_result(Graph &G, int N) {
         rep(i, G[v].size()) {
             if (G[v][i].capacity != 0) {
                 f = G[v][i].capacity - G[v][i].residual_capacity;
-                cout << v << "\t\t" << G[v][i].to << "\t\t" << f << endl;
+                cout << v << "\t" << G[v][i].to << "\t" << f << endl;
             }
         }
     }
