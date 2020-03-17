@@ -66,9 +66,9 @@ If you implement new algorithm, please overwrite below.
 |         | 475  | Dynamic Programming Knapsack Alg.            | -                 |
 |         | 477  | Knapsack Approximation Scheme                | -                 |
 |         | 481  | Nemhauser-Ullmann Alg.                       | -                 |
-| 18      | 491  | Next-Fit Alg. (NF)                           | -                 |
-|         | 493  | First-Fit Alg. (FF)                          | -                 |
-|         |      | First-Fit-Decreasing Alg. (FFD)              | -                 |
+| 18      | 491  | Next-Fit Alg. (NF)                           | Completed         |
+|         | 493  | First-Fit Alg. (FF)                          | Completed         |
+|         |      | First-Fit-Decreasing Alg. (FFD)              | Completed         |
 |         | 497  | Fernandez-de-la-Vega-Lueker Alg.             | -                 |
 | 19      | 516  | Multicommodity Flow Approximation Scheme     | -                 |
 | 20      | 546  | Dreyfus-Wagner Alg.                          | -                 |
