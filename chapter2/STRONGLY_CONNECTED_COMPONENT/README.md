@@ -7,7 +7,8 @@ mkdir build
 cd build
 cmake ..
 make
-./STRONGLY_CONNECTED_COMPONENT
+./STRONGLY_CONNECTED_COMPONENT < ../input.txt > output.txt
+cd ..
 ```
 
 ### instance
