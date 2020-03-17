@@ -1,40 +1,43 @@
 #include<iostream>
 #include<vector>
 #include<queue>
-#include "Branching.h"
+#include "kruskal.hpp"
+
 using namespace std;
+using Graph = vector<vector<pair<int, int> > >;
 int N, M;
-queue<int> E;
 
 int main() {
+    //weighted undirected graph Gを読み込んでGのminimum weight spannning tree Tを得る
+
+    int a, b, w;
+    
     cin >> N >> M;
-    
-    Branching B(N,M);
-    int s, t, w; // head, tail and weight
-    vector<tuple<int, int, int> > W(M);
+    Graph G(N);
     for (int i=0; i<M; i++) {
-        cin >> s >> t >> w;
-        W[i] = make_tuple(w,s,t);
+        cin >> a >> b >> w;
+        a--;
+        b--;
+        G[a].push_back(make_pair(b, w));
+        G[b].push_back(make_pair(a, w));
     }
-    
-    int a, b; // two vertices
-    sort(W.begin(), W.end());
-    reverse(W.begin(), W.end());
 
-    for (int i=0; i<M; i++) {
-        a = get<1>(W[i]);
-        b = get<2>(W[i]);
-        if (!B.share_same_parent(a, b)) {
-            E.push(i);
-            B.merge(a, b); 
+    Kruskal kr(G);
+
+    Graph T = kr.run();
+
+    // Tの出力
+    int N_T = T.size();
+    int M_T = N_T - 1; //spanning tree
+    
+    cout << N_T << " " << M_T << endl;
+
+    for (int t_a=0; t_a<N; t_a++)
+    {
+        for (int j=0; j<T[t_a].size(); j++) {
+            int t_b = T[t_a][j].first;
+            int t_w = T[t_a][j].second;
+            if (t_a < t_b) cout << t_a+1 << " " << t_b+1 << " " << t_w << endl;
         }
-    }
-
-    // output results
-    cout << N << " " << E.size() << endl;
-    while (!E.empty()){
-        tuple<int, int, int> e = W[E.front()];
-        E.pop();
-        cout << get<1>(e) << " " << get<2>(e) << " " << get<0>(e) << endl;
     }
 }
