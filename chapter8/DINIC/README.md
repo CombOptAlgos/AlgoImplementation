@@ -42,19 +42,19 @@ then, the optimun(maximun) flow is written in output.txt!
 - output.txt
 ```bash
 v_from	v_to	flow
-0		1		10
-0		2		5
-0		3		13
-1		2		0
-1		4		8
-1		5		2
-2		3		0
-2		5		8
-3		6		13
-4		5		0
-4		7		8
-5		7		10
-5		6		0
-6		2		3
-6		7		10
+0	1	10
+0	2	5
+0	3	13
+1	2	0
+1	4	8
+1	5	2
+2	3	0
+2	5	8
+3	6	13
+4	5	0
+4	7	8
+5	7	10
+5	6	0
+6	2	3
+6	7	10
 ```
