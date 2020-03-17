@@ -5,7 +5,7 @@
 using namespace std;
 using Graph = vector<vector<int> >;
 
-class SCC
+class StronglyConnectedComponent
 {
     public:
         int N = -1;
@@ -16,19 +16,19 @@ class SCC
         Graph G;
         int V;
         
-        SCC(Graph G_, int V_);
+        StronglyConnectedComponent(Graph G_, int V_);
         void visit1(int v);
         void visit2(int v);
         vector<int> run();
 };
 
-SCC::SCC(Graph G_, int V_)
+StronglyConnectedComponent::StronglyConnectedComponent(Graph G_, int V_)
 {
     G = G_;
     V = V_;
 }
 
-void SCC::visit1(int v)
+void StronglyConnectedComponent::visit1(int v)
 {
    R[v] = true;
    rep(i, G[v].size())
@@ -41,7 +41,7 @@ void SCC::visit1(int v)
 }
 
 
-void SCC::visit2(int v)
+void StronglyConnectedComponent::visit2(int v)
 {
     R[v] = true;
     rep(i, V){
@@ -56,7 +56,7 @@ void SCC::visit2(int v)
 }
 
 
-vector<int> SCC::run()
+vector<int> StronglyConnectedComponent::run()
 {
     psi_i.assign(V, -1);
     comp.assign(V, -1);

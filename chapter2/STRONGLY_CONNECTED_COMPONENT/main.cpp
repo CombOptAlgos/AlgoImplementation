@@ -17,7 +17,7 @@ int main(){
        G[a].push_back(b);
     }
 
-    SCC scc(G, V);
+    StronglyConnectedComponent scc(G, V);
     vector<int> comp = scc.run();
 
     rep(i, V)
