@@ -7,7 +7,7 @@ mkdir build
 cd build
 cmake ..
 make
-./STRONGLY_CONNECTED_COMPONENT < ../input.txt > output.txt
+./STRONGLY_CONNECTED_COMPONENT < ../input.txt > ../output.txt
 cd ..
 ```
 
