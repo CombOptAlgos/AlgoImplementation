@@ -26,11 +26,11 @@ E(G) = {(0, 1), (1, 2), (2, 0), (3, 4)}
 ```
 - output 
 ```bash
-0 0 # vertices comp_value
-1 0
-2 0
-3 1
-4 2
+0 2 # vertices comp_value
+1 2
+2 2
+3 0
+4 1
 ```
 
 
