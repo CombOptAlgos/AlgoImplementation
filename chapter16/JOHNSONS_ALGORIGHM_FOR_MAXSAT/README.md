@@ -1,1 +1,1 @@
-# Johnson's Algorithm for MaxSat'
+# Johnson's Algorithm for MaxSat
