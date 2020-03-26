@@ -33,7 +33,7 @@ If you implement new algorithm, please overwrite below.
 |         | 168  | Minimum Mean Cycle Alg.                      | -                 |
 | 8       | 180  | Ford-Fulkerson Alg.                          | Completed         |
 |         | 184  | Edmonds-Karp Alg.                            | Ongoing           |
-|         | 186  | Dinic's Alg.                                 | -                 |
+|         | 186  | Dinic's Alg.                                 | Completed         |
 |         | 187  | Karzanov's Alg.                              | -                 |
 |         | 189  | Fujishige's Alg.                             | -                 |
 |         | 191  | Push-Relabel Alg.                            | -                 |
