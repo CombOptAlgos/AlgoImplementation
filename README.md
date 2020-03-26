@@ -7,6 +7,10 @@ If you implement new algorithm, please overwrite below.
     - (ALGORITHM NAME)
         - implementation source files.
         - build manual.
+- lib
+    libraries such as data structure.
+- test_instance
+    graph test case generator.
 
 ## Implementation
 
@@ -35,7 +39,7 @@ If you implement new algorithm, please overwrite below.
 |         | 184  | Edmonds-Karp Alg.                            | Ongoing           |
 |         | 186  | Dinic's Alg.                                 | Completed         |
 |         | 187  | Karzanov's Alg.                              | -                 |
-|         | 189  | Fujishige's Alg.                             | -                 |
+|         | 189  | Fujishige's Alg.                             | Completed         |
 |         | 191  | Push-Relabel Alg.                            | -                 |
 |         | 196  | Gomory-Hu Alg.                               | -                 |
 | 9       | 220  | Minimum Mean Cycle-Cancelling Alg.           | -                 |
@@ -85,3 +89,4 @@ If you implement new algorithm, please overwrite below.
 | 22      | 632  | Shmoys-Tardos-Aardal Alg.                    | -                 |
 |         | 634  | Jain-Vazirani Alg.                           | -                 |
 |         | 636  | Dual Fitting Alg.                            | -                 |
+
