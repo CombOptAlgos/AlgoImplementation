@@ -47,7 +47,6 @@ Graph Kruskal::run()
     queue<int> E;
 
     sort(W.begin(), W.end());
-    reverse(W.begin(), W.end());
 
     int a, b, w; // two vertices
     for (int i=0; i<M; i++) {
