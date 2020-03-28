@@ -93,10 +93,7 @@ Run
 $ test.sh
 ```
  to see the program works on the test cases in 
-`../test/instances/`, though actually, the ansers for case 16 and 38 do not coincide with
-the ones in `../test/instances/outputs/`.
-
-I suspect that `output16.txt` and `output38.txt` might be wrong.
+`../test/instances/`.
 
 ## Information
 
