@@ -40,7 +40,7 @@ If you implement new algorithm, please overwrite below.
 |         | 186  | Dinic's Alg.                                 | Completed         |
 |         | 187  | Karzanov's Alg.                              | -                 |
 |         | 189  | Fujishige's Alg.                             | Completed         |
-|         | 191  | Push-Relabel Alg.                            | -                 |
+|         | 191  | Goldberg-Tarjan Alg.                         | Ongoing           |
 |         | 196  | Gomory-Hu Alg.                               | -                 |
 | 9       | 220  | Minimum Mean Cycle-Cancelling Alg.           | -                 |
 |         | 224  | Successive Shortest Path Alg.                | -                 |
