@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.13)
+project(DYNAMIC_PROGRAMMING_KNAPSACK)
+
+set(CMAKE_CXX_STANDARD 14)
+
+add_executable(DYNAMIC_PROGRAMMING_KNAPSACK main.cpp)
