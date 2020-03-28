@@ -43,7 +43,7 @@ If you implement new algorithm, please overwrite below.
 |         | 191  | Goldberg-Tarjan Alg.                         | Ongoing           |
 |         | 196  | Gomory-Hu Alg.                               | -                 |
 | 9       | 220  | Minimum Mean Cycle-Cancelling Alg.           | -                 |
-|         | 224  | Successive Shortest Path Alg.                | -                 |
+|         | 224  | Successive Shortest Path Alg.                | Ongoing           |
 |         | 226  | Capacity Scaling Alg.                        | -                 |
 |         | 228  | Orlin's Alg.                                 | -                 |
 |         | 234  | Network Simplex Alg.                         | -                 |
@@ -67,7 +67,7 @@ If you implement new algorithm, please overwrite below.
 |         | 447  | Johnson's Alg. For Max-Sat                   | -                 |
 |         | 448  | Goemans-Williamson Alg. For Max-Sat          | -                 |
 | 17      | 473  | Weighted Median Alg.                         | -                 |
-|         | 475  | Dynamic Programming Knapsack Alg.            | -                 |
+|         | 475  | Dynamic Programming Knapsack Alg.            | Completed         |
 |         | 477  | Knapsack Approximation Scheme                | -                 |
 |         | 481  | Nemhauser-Ullmann Alg.                       | -                 |
 | 18      | 491  | Next-Fit Alg. (NF)                           | Completed         |
@@ -81,7 +81,7 @@ If you implement new algorithm, please overwrite below.
 |         | 556  | Iterative Randomized Rounding Alg.           | -                 |
 |         | 566  | Primal-Dual Alg. For Network Design          | -                 |
 |         | 577  | Jain's Alg.                                  | -                 |
-| 21      | 593  | Double-Tree Alg.                             | -                 |
+| 21      | 593  | Double-Tree Alg.                             | Ongoing           |
 |         |      | Christofides' Alg.                           | -                 |
 |         | 602  | Arora's Alg.                                 | -                 |
 |         | 604  | k-Opt Alg.                                   | -                 |
