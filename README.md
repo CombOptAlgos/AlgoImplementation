@@ -23,7 +23,7 @@ If you implement new algorithm, please overwrite below.
 |         | 81   | Gaussian Elimination                         | Completed         |
 |         | 85   | Ellipsoid Method                             | -                 |
 |         | 94   | Grotschel-Lovasz-Schrijver Alg.              | -                 |
-| 6       | 136  | Kruskal's Alg.                               | Ongoing           |
+| 6       | 136  | Kruskal's Alg.                               | Completed           |
 |         | 137  | Prim's Alg.                                  | -                 |
 |         | 138  | Fibonacci Heap                               | Ongoing           |
 |         | 142  | Edmonds' Branching Alg.                      | -                 |
