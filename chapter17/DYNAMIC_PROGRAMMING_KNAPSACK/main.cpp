@@ -12,8 +12,7 @@ int main() {
     int weight[n];
     int profit[n];
     rep(i, n){
-        cin >> weight[i];
-        cin >> profit[i];
+        cin >> weight[i] >> profit[i];
     }
     int W; cin >> W;
 
