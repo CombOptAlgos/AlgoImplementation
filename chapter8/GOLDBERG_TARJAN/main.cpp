@@ -18,9 +18,9 @@ int main(void) {
         add_edge_and_initialize_flow(G, from, to, capacity, s);
     }
 
-    goldberg_tarjan(G, s, t, N, alpha);
+    goldberg_tarjan(G, s, t, N);
 
-    output_result(G, N);
+    output_result(G, N, s);
 
     return 0;
 }
